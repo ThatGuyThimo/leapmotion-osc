@@ -6,6 +6,8 @@ Using a Leap Motion Controller from Ultraleap for finger tracking in VRChat with
 
 This project uses two npm packages, [leapjs](https://github.com/leapmotion/leapjs) and [node-osc](https://github.com/MylesBorins/node-osc), to send finger tracking data from a Leap Motion Controller to VRChat via OSC.
 
+https://user-images.githubusercontent.com/53810001/154858534-3e3f626c-cc9a-4ff0-9159-09b783eec284.mp4
+
 ## Getting Started
 
 ### Dependencies
@@ -45,6 +47,10 @@ Your avatar receives OSC inputs for 10 float parameters that you need to add to 
 
 To do this, I created two layers in my gesture layer (one hand each) and added a custom bool parameter called "leapmotion" to turn OSC value playback on and off ingame.
 I recommend using a threshold of `0.4` to `0.9` for the blendtrees, as I have had the best results with this. Please note that the animations provided in the repo are customized to my avatar and have not been tested on other avatars yet. In the worst case you will have to set up the animations and blendtrees yourself.
+
+![image](https://user-images.githubusercontent.com/53810001/154858570-233b9e0b-21b5-4880-9ed7-c6087a911ef9.png)
+
+![image](https://user-images.githubusercontent.com/53810001/154858549-dd4e3ef0-7a4f-490e-90b6-2b680d86793d.png)
 
 You can edit my code at any time to add or remove prefixes or change the name of the fingers as you like.
 

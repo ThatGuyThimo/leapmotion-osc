@@ -44,7 +44,7 @@ Your avatar receives OSC inputs for 10 float parameters that you need to add to 
 * rightPinky (float)
 
 To do this, I created two layers in my gesture layer (one hand each) and added a custom bool parameter called "leapmotion" to turn OSC value playback on and off ingame.
-I recommend using a threshold of 0.4 to 0.9 for the blendtrees, as I have had the best results with this. Please note that the animations provided in the repo are customized to my avatar and have not been tested on other avatars yet. In the worst case you will have to set up the animations and blendtrees yourself.
+I recommend using a threshold of `0.4` to `0.9` for the blendtrees, as I have had the best results with this. Please note that the animations provided in the repo are customized to my avatar and have not been tested on other avatars yet. In the worst case you will have to set up the animations and blendtrees yourself.
 
 You can edit my code at any time to add or remove prefixes or change the name of the fingers as you like.
 

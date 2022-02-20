@@ -1,4 +1,4 @@
-# Leap Motion Controller fingertracking for VRChat OSC
+# Leap Motion Controller finger tracking for VRChat OSC
 
 Using a Leap Motion Controller from Ultraleap for finger tracking in VRChat without mods.
 

@@ -13,30 +13,12 @@ oscServer.on('message', function (msg) {
 
 Leap.loop({optimizeHMD:true}, (frame) => {
 	frame.hands.forEach(hand => {
-
-		if (hand.type == 0) {
-
-			const imTrackingThumbLeft = getDistanceBetween(hand.fingers[0].dipPosition, hand.palmPosition);
-			const imTrackingIndexLeft = getDistanceBetween(hand.fingers[1].dipPosition, hand.palmPosition);
-			const imTrackingMiddleLeft = getDistanceBetween(hand.fingers[2].dipPosition, hand.palmPosition);
-			const imTrackingRingLeft = getDistanceBetween(hand.fingers[3].dipPosition, hand.palmPosition);
-			const imTrackingPinkyLeft = getDistanceBetween(hand.fingers[4].dipPosition, hand.palmPosition);
-
-		} else {
-
-			const imTrackingThumbRight = getDistanceBetween(hand.fingers[0].dipPosition, hand.palmPosition);
-			const imTrackingIndexRight = getDistanceBetween(hand.fingers[1].dipPosition, hand.palmPosition);
-			const imTrackingMiddleRight = getDistanceBetween(hand.fingers[2].dipPosition, hand.palmPosition);
-			const imTrackingRingRight = getDistanceBetween(hand.fingers[3].dipPosition, hand.palmPosition);
-			const imTrackingPinkyRight = getDistanceBetween(hand.fingers[4].dipPosition, hand.palmPosition);
-			
-		}
-
 		hand.fingers.forEach(finger => {
 			const osc_path = '/avatar/parameters/' + hand.type + fingerType(finger.type);
 			const osc_value = getDistanceBetween(finger.dipPosition, hand.palmPosition);
-		})
 
+			sendOSC(osc_path, osc_value);
+		})
 	});
 });
 

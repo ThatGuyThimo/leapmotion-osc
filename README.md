@@ -57,6 +57,8 @@ You can edit my code at any time to add or remove prefixes or change the name of
 [Zedzeen](https://github.com/Zedzeen)
 
 ## Version History
+* 1.0.1
+    * split distance calculation and OSC sending to separate functions
 * 1.0.0
     * Pull changes from Zedzeen, cleanup code, update license
 * 0.1

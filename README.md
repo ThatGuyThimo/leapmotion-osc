@@ -23,8 +23,7 @@ https://user-images.githubusercontent.com/53810001/154858534-3e3f626c-cc9a-4ff0-
 
 ### Executing program
 
-* Run the script with `node ./leapmotion-osc.js`.
-* If you want to receive VRChat OSC output on port 9001, comment-in the commented-out code in the leapmotion-osc.js file.
+* Run the script with `npm start`.
 
 ### Additional notes
 
@@ -54,8 +53,12 @@ I recommend using a threshold of `0.4` to `0.9` for the blendtrees, as I have ha
 
 You can edit my code at any time to add or remove prefixes or change the name of the fingers as you like.
 
-## Version History
+## Contributors
+[Zedzeen](https://github.com/Zedzeen)
 
+## Version History
+* 1.0.0
+    * Pull changes from Zedzeen, cleanup code, update license
 * 0.1
     * Initial Release
 

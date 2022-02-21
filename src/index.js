@@ -1,31 +1,55 @@
 const Client = require('../node_modules/node-osc/dist/lib/Client');
 const Server = require('../node_modules/node-osc/dist/lib/Server');
-
 const Leap = require('leapjs');
 
 // Properties
 const config = require('config');
-
 
 const client = new Client(config.get('client.host'), config.get('client.port'));
 const oscServer = new Server(config.get('server.port'), config.get('server.host'), () => {
 	console.log('OSC Server is listening');
 });
 
+let l_hand;
+let r_hand;
+let trackingFrame;
+
 oscServer.on('message', function (msg) {
+	const msg_info = msg.split(',');
+	console.log(msg_info);
 	console.log('Message: ' + msg);
+
+	if (msg.contains('trackingFrame')) {
+		trackingFrame = msg_info[1];
+	}
 });
 
 Leap.loop({optimizeHMD:config.get('optimizeHMD')}, (frame) => {
-	frame.hands.forEach(hand => {
+
+	l_hand = frame.hands[0];
+	r_hand = frame.hands[1];
+
+	/* frame.hands.forEach(hand => {
 		hand.fingers.forEach(finger => {
 			const osc_path = '/avatar/parameters/' + hand.type + fingerType(finger.type);
 			const osc_value = getDistanceBetween(finger.dipPosition, hand.palmPosition);
 
 			sendOSC(osc_path, osc_value);
 		})
-	});
+	}); */
 });
+
+var time = 1000/1;
+setInterval(function() {
+	console.log('Previouse frame: ' + trackingFrame);
+	
+	if (trackingFrame == 1) {
+		sendOSC('/avatar/parameters/trackingFrame', 1);
+	} else {
+		sendOSC('/avatar/parameters/trackingFrame', 0);
+	}
+
+}, time);
 
 function sendOSC(path, value) {
 	client.send(path, value);

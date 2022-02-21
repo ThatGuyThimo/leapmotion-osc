@@ -2,9 +2,9 @@
   "name": "leapmotion-osc",
   "version": "1.0.0",
   "description": "Leap Motion Controller finger tracking for VRChat OSC: Using a Leap Motion Controller from Ultraleap for finger tracking in VRChat without mods.",
-  "main": "leapmotion-osc.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node leapmotion-osc.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

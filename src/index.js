@@ -1,9 +1,9 @@
-const Client = require('./node_modules/node-osc/dist/lib/Client');
-const Server = require('./node_modules/node-osc/dist/lib/Server');
+const Client = require('node-osc/dist/lib/Client');
+const Server = require('node-osc/dist/lib/Server');
 
 const Leap = require('leapjs');
-const client = new Client('127.0.0.1', 9000);
-const oscServer = new Server(9001, '0.0.0.0', () => {
+const client = new Client('localhost', 9000);
+const oscServer = new Server(9001, 'localhost', () => {
 	console.log('OSC Server is listening');
 });
 

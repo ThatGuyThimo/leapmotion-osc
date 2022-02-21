@@ -7,5 +7,6 @@
       "host": "localhost",
       "port": 9000
     },
-    "optimizeHMD": true
+    "optimizeHMD": true,
+    "oscRootPath": "/avatar/parameters/"
   }

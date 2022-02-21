@@ -4,54 +4,49 @@ const Leap = require('leapjs');
 
 // Properties
 const config = require('config');
+const oscRootPath = config.get('oscRootPath');
 
+// OSC Client & Server
 const client = new Client(config.get('client.host'), config.get('client.port'));
 const oscServer = new Server(config.get('server.port'), config.get('server.host'), () => {
-	console.log('OSC Server is listening');
+	console.log('OSC Server is listening.');
 });
 
+// Tracking data
 let l_hand;
 let r_hand;
-let trackingFrame;
 
 oscServer.on('message', function (msg) {
-	const msg_info = msg.split(',');
-	console.log(msg_info);
 	console.log('Message: ' + msg);
-
-	if (msg.contains('trackingFrame')) {
-		trackingFrame = msg_info[1];
-	}
 });
 
 Leap.loop({optimizeHMD:config.get('optimizeHMD')}, (frame) => {
-
-	l_hand = frame.hands[0];
-	r_hand = frame.hands[1];
-
-	/* frame.hands.forEach(hand => {
-		hand.fingers.forEach(finger => {
-			const osc_path = config.get(oscRootPath) + hand.type + fingerType(finger.type);
-			const osc_value = getDistanceBetween(finger.dipPosition, hand.palmPosition);
-
-			sendOSC(osc_path, osc_value);
-		})
-	}); */
+	frame.hands.forEach(hand => {
+		if (hand.type == 'left') {
+			l_hand = hand;
+		} else {
+			r_hand = hand;
+		}
+	});
 });
 
-var time = 1000/1;
-setInterval(function() {
-	console.log('Previouse frame: ' + trackingFrame);
-	
-	if (trackingFrame == 1) {
-		sendOSC('/avatar/parameters/trackingFrame', 1);
-	} else {
-		sendOSC('/avatar/parameters/trackingFrame', 0);
-	}
+console.log('Waiting for your beautiful hands.');
 
+var time = 1000/60;
+setInterval(function() {
+	updateTrackingData(l_hand);
+	updateTrackingData(r_hand);
 }, time);
 
+function updateTrackingData(hand) {
+	if (hand == undefined) return
+	hand.fingers.forEach(finger => {
+		sendOSC(hand.type + fingerType(finger.type), getDistanceBetween(finger.dipPosition, hand.palmPosition));
+	})
+}
+
 function sendOSC(path, value) {
+	path = oscRootPath + path;
 	client.send(path, value);
 	console.log('Send: ' + path + ',' + value);
 }
@@ -90,7 +85,7 @@ function fingerType(type) {
 process.on('SIGINT', () => {
 	client.close();
 	setTimeout(() => {
-    console.log('OSC Client is closed')
+		console.log('OSC Client is closed')
 		process.exit(0);
 	}, 100);
 });

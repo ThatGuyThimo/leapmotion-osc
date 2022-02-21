@@ -2,8 +2,13 @@ const Client = require('../node_modules/node-osc/dist/lib/Client');
 const Server = require('../node_modules/node-osc/dist/lib/Server');
 
 const Leap = require('leapjs');
-const client = new Client('localhost', 9000);
-const oscServer = new Server(9001, 'localhost', () => {
+
+// Properties
+const config = require('config');
+
+
+const client = new Client(config.get('client.host'), config.get('client.port'));
+const oscServer = new Server(config.get('server.port'), config.get('server.host'), () => {
 	console.log('OSC Server is listening');
 });
 
@@ -11,7 +16,7 @@ oscServer.on('message', function (msg) {
 	console.log('Message: ' + msg);
 });
 
-Leap.loop({optimizeHMD:true}, (frame) => {
+Leap.loop({optimizeHMD:config.get('optimizeHMD')}, (frame) => {
 	frame.hands.forEach(hand => {
 		hand.fingers.forEach(finger => {
 			const osc_path = '/avatar/parameters/' + hand.type + fingerType(finger.type);
@@ -40,9 +45,7 @@ function getDistanceBetween(pointA, pointB) {
 	const cy = ay - by;
 	const cz = az - bz;
 
-	const dist = ((Math.sqrt(Math.pow(cx, 2) + Math.pow(cy, 2) + Math.pow(cz, 2))) / 100);
-	
-	return dist;
+	return ((Math.sqrt(Math.pow(cx, 2) + Math.pow(cy, 2) + Math.pow(cz, 2))) / 100);
 }
 
 function fingerType(type) {

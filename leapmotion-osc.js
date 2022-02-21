@@ -1,32 +1,49 @@
 const Client = require('./node_modules/node-osc/dist/lib/Client');
-const Leap = require('leapjs');
+const Server = require('./node_modules/node-osc/dist/lib/Server');
 
+const Leap = require('leapjs');
 const client = new Client('127.0.0.1', 9000);
+const oscServer = new Server(9001, '0.0.0.0', () => {
+	console.log('OSC Server is listening');
+});
+
+oscServer.on('message', function (msg) {
+	console.log('Message: ' + msg);
+});
 
 Leap.loop({optimizeHMD:true}, (frame) => {
 	frame.hands.forEach(hand => {
 		hand.fingers.forEach(finger => {
 			const osc_path = '/avatar/parameters/' + hand.type + fingerType(finger.type);
+			const osc_value = getDistanceBetween(finger.dipPosition, hand.palmPosition);
 
-			const finger_x = finger.dipPosition[0];
-			const finger_y = finger.dipPosition[1];
-			const finger_z = finger.dipPosition[2];
-
-			const hand_x = hand.palmPosition[0];
-			const hand_y = hand.palmPosition[1];
-			const hand_z = hand.palmPosition[2];
-
-			const dx = finger_x - hand_x;
-			const dy = finger_y - hand_y;
-			const dz = finger_z - hand_z;
-			
-			const dist = (Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2) + Math.pow(dz, 2)));
-
-			client.send(osc_path, (dist / 100));
-			console.log('Send: ' + osc_path + ',' + (dist / 100));
+			sendOSC(osc_path, osc_value);
 		})
 	});
 });
+
+function sendOSC(path, value) {
+	client.send(path, value);
+	console.log('Send: ' + path + ',' + value);
+}
+
+function getDistanceBetween(pointA, pointB) {
+	const ax = pointA[0];
+	const ay = pointA[1];
+	const az = pointA[2];
+
+	const bx = pointB[0];
+	const by = pointB[1];
+	const bz = pointB[2];
+
+	const cx = ax - bx;
+	const cy = ay - by;
+	const cz = az - bz;
+
+	const dist = ((Math.sqrt(Math.pow(cx, 2) + Math.pow(cy, 2) + Math.pow(cz, 2))) / 100);
+	
+	return dist;
+}
 
 function fingerType(type) {
 	switch(type) {

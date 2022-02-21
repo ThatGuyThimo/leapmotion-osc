@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "module": "commonjs",
+        "target": "ES5",
+        "outDir": "ts-built",
+        "rootDir": "src"
+    }
+  }

@@ -31,7 +31,7 @@ Leap.loop({optimizeHMD:config.get('optimizeHMD')}, (frame) => {
 
 	/* frame.hands.forEach(hand => {
 		hand.fingers.forEach(finger => {
-			const osc_path = '/avatar/parameters/' + hand.type + fingerType(finger.type);
+			const osc_path = config.get(oscRootPath) + hand.type + fingerType(finger.type);
 			const osc_value = getDistanceBetween(finger.dipPosition, hand.palmPosition);
 
 			sendOSC(osc_path, osc_value);

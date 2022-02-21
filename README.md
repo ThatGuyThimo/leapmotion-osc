@@ -61,4 +61,4 @@ You can edit my code at any time to add or remove prefixes or change the name of
 
 ## License
 
-You can use, edit or embed my code as you like.
+MIT License: Check the LICENSE file

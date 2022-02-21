@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var node_osc_1 = require("node-osc");
-var leapjs_1 = require("leapjs");
-var client = new node_osc_1.Client('127.0.0.1', 9000);
-leapjs_1.default.loop({ optimizeHMD: true }, function (frame) {
+var Leap = require("leapjs");
+var client = new node_osc_1.Client('127.0.0.1', 3333);
+Leap.loop({ optimizeHMD: true }, function (frame) {
     frame.hands.forEach(function (hand) {
         hand.fingers.forEach(function (finger) {
             var osc_path = '/avatar/parameters/' + hand.type + fingerType(finger.type);
@@ -16,14 +16,16 @@ leapjs_1.default.loop({ optimizeHMD: true }, function (frame) {
             var dx = finger_x - hand_x;
             var dy = finger_y - hand_y;
             var dz = finger_z - hand_z;
-            var dist = (Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2) + Math.pow(dz, 2)));
-            // client.send(osc_path, (dist / 100), () => {
-            // 	client.close();
-            // });
-            // client.send('/oscAddress', 200, () => {
-            // 	client.close();
-            //   });
-            console.log('Send: ' + osc_path + ',' + (dist / 100));
+            var dist = (Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2) + Math.pow(dz, 2))) / 100;
+            var message = new node_osc_1.Message(osc_path);
+            message.append(dist);
+            client.send(message, function (err) {
+                if (err) {
+                    console.error(new Error(err.message));
+                }
+                client.close();
+            });
+            console.log('Send: ' + osc_path + ',' + dist);
         });
     });
 });

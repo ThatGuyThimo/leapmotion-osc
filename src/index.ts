@@ -1,17 +1,18 @@
-import { Client } from 'node-osc';
-import Leap from 'leapjs';
+import { Client, Message } from 'node-osc';
+import * as Leap from 'leapjs';
 
-const client = new Client('127.0.0.1', 9000);
+const client = new Client('127.0.0.1', 3333);
+
 
 Leap.loop({optimizeHMD:true}, (frame: { hands: { fingers: { type: number; dipPosition: any[]; }[]; type: string; palmPosition: any[]; }[]; }) => {
 	frame.hands.forEach((hand: { fingers: { type: number; dipPosition: any[]; }[]; type: string; palmPosition: any[]; }) => {
 		hand.fingers.forEach((finger: { type: number; dipPosition: any[]; }) => {
 			const osc_path = '/avatar/parameters/' + hand.type + fingerType(finger.type);
-
+			
 			let finger_x = finger.dipPosition[0];
 			let finger_y = finger.dipPosition[1];
 			let finger_z = finger.dipPosition[2];
-
+			
 			let hand_x = hand.palmPosition[0];
 			let hand_y = hand.palmPosition[1];
 			let hand_z = hand.palmPosition[2];
@@ -20,17 +21,20 @@ Leap.loop({optimizeHMD:true}, (frame: { hands: { fingers: { type: number; dipPos
 			let dy = finger_y - hand_y;
 			let dz = finger_z - hand_z;
 			
-			const dist = (Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2) + Math.pow(dz, 2)));
+			const dist = (Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2) + Math.pow(dz, 2))) / 100;
+			
+			
+			const message = new Message(osc_path);
+			message.append(dist);
+			
+			client.send(message, (err) => {
+				if (err) {
+				  console.error(new Error(err.message));
+				}
+				client.close();
+			});
 
-			// client.send(osc_path, (dist / 100), () => {
-			// 	client.close();
-			// });
-
-			// client.send('/oscAddress', 200, () => {
-			// 	client.close();
-			//   });
-
-			console.log('Send: ' + osc_path + ',' + (dist / 100));
+			console.log('Send: ' + osc_path + ',' + dist);
 		})
 	});
 });

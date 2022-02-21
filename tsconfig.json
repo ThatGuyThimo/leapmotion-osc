@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "allowJs": false,
+        "allowJs": true,
         "module": "commonjs",
         "target": "ES5",
         "outDir": "ts-built",

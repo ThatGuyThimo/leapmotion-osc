@@ -1,0 +1,12 @@
+{
+    "server": {
+      "host": "localhost",
+      "port": 9001
+    },
+    "client": {
+      "host": "localhost",
+      "port": 9000
+    },
+    "optimizeHMD": true,
+    "oscRootPath": "/avatar/parameters/"
+  }

@@ -57,11 +57,9 @@ You can edit my code at any time to add or remove prefixes or change the name of
 [Zedzeen](https://github.com/Zedzeen)
 
 ## Version History
-<<<<<<< HEAD
 =======
 * 1.0.2
     * added config file for server / client and leapjs settings
->>>>>>> origin/development
 * 1.0.1
     * split distance calculation and OSC sending to separate functions
 * 1.0.0

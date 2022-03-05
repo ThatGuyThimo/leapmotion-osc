@@ -13,6 +13,8 @@ const oscServer = new Server(config.get('server.port'), config.get('server.host'
 });
 
 // Tracking data
+let last_l_hand;
+let last_r_hand;
 let l_hand;
 let r_hand;
 
@@ -32,10 +34,12 @@ Leap.loop({optimizeHMD:config.get('optimizeHMD')}, (frame) => {
 
 console.log('Waiting for your beautiful hands.');
 
-var time = 1000/60;
+var time = 1000/config.get('oscRefreshRate');
 setInterval(function() {
-	updateTrackingData(l_hand);
-	updateTrackingData(r_hand);
+	if (l_hand !== last_l_hand) updateTrackingData(l_hand);
+	if (r_hand !== last_r_hand) updateTrackingData(r_hand);
+	last_l_hand = l_hand;
+	last_r_hand = r_hand;
 }, time);
 
 function updateTrackingData(hand) {

@@ -8,5 +8,6 @@
       "port": 9000
     },
     "optimizeHMD": true,
+    "oscRefreshRate": 60,
     "oscRootPath": "/avatar/parameters/"
   }

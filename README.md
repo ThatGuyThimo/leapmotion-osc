@@ -57,7 +57,7 @@ You can edit my code at any time to add or remove prefixes or change the name of
 [Zedzeen](https://github.com/Zedzeen)
 
 ## Version History
-=======
+
 * 1.0.2
     * added config file for server / client and leapjs settings
 * 1.0.1

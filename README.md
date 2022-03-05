@@ -59,7 +59,7 @@ You can edit my code at any time to add or remove prefixes or change the name of
 ## Version History
 
 * 1.0.2
-    * added config file for server / client and leapjs settings
+    * added config file for server / client and leapjs settings. added oscRefreshRate as config variable, only send parameter when change happens
 * 1.0.1
     * split distance calculation and OSC sending to separate functions
 * 1.0.0

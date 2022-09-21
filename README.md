@@ -43,7 +43,7 @@ The tracking optimization for the controllers is set to `HMD`, using Edit Time P
 
 ## Avatar Setup
 
-Your avatar receives OSC inputs for 10 float parameters that you need to add to your avatar. You also need to create or use the [animation controller provided in the 1.0.3 release](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.0.3/leapmotionosc-avatar-animation-controller.zip) to create blendtrees that transition from the retracted to the extended state of each finger.
+Your avatar receives OSC inputs for 10 float parameters that you need to add to your avatar. You also need to create or use the [animation controller provided in the 1.0.3 release](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.0.3/leapmotionosc-avatar-animation-controller.unitypackage) to create blendtrees that transition from the retracted to the extended state of each finger.
 
 * leftThumb (float)
 * leftIndex (float)

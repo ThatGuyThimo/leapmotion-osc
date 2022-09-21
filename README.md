@@ -2,6 +2,7 @@
 
 Using a Leap Motion Controller from Ultraleap for finger tracking in VRChat without mods. Version 1.0.3 of this project is now a standalone Unity application, as Ultraleap has discontinued its Javascript SDK.
 
+![preview](https://user-images.githubusercontent.com/53810001/191473987-7695cc22-2935-4fa7-9028-788854c0054a.png)
 
 ## Description
 
@@ -17,12 +18,12 @@ This project uses [OscCore](https://github.com/stella3d/OscCore) and the OpenUPM
 
 ### Windows
 
-Download and run the pre-packaged executable file of the latest release.
-If you want, you can also download the archive file marked as the windows build, unzip it and run the executable file it contains.
+Download and run the [pre-packaged executable](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.0.3/LeapmotionOSC-1.0.3.exe) file of the latest release.
+If you want, you can also download the [archive file](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.0.3/leapmotionosc-1.0.3-windows.zip) marked as the windows build, unzip it and run the executable file it contains.
 
 ### Linux
 
-Download the archive file marked as the linux build, extract it and run the application with:
+Download the [archive file](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.0.3/leapmotionosc-1.0.3-linux.zip) marked as the linux build, extract it and run the application with:
 
 ```console
 ./LeapmotionOSC.x86_64
@@ -42,7 +43,7 @@ The tracking optimization for the controllers is set to `HMD`, using Edit Time P
 
 ## Avatar Setup
 
-Your avatar receives OSC inputs for 10 float parameters that you need to add to your avatar. You also need to create or use the animations provided in the animations repo folder to create blendtrees that transition from the retracted to the extended state of each finger.
+Your avatar receives OSC inputs for 10 float parameters that you need to add to your avatar. You also need to create or use the [animation controller provided in the 1.0.3 release](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.0.3/leapmotionosc-avatar-animation-controller.zip) to create blendtrees that transition from the retracted to the extended state of each finger.
 
 * leftThumb (float)
 * leftIndex (float)

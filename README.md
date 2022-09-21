@@ -63,7 +63,8 @@ To do this, we created two layers in the gesture layer (one hand each) and added
 ![image](https://user-images.githubusercontent.com/53810001/154858549-dd4e3ef0-7a4f-490e-90b6-2b680d86793d.png)
 
 ## Contributors
-[Zedzeen](https://github.com/Zedzeen)
+- [Zedzeen](https://github.com/Zedzeen) original NodeJS version
+- [-Thimo-](https://github.com/ThatGuyThimo) referral / help for new Unity standalone version
 
 ## Version History
 

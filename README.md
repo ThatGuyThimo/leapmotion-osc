@@ -12,7 +12,7 @@ This project uses [OscCore](https://github.com/stella3d/OscCore) and the OpenUPM
 
 ### Dependencies
 
-* [Ultraleap Gemini 5.7.2](https://www2.leapmotion.com/downloads/gemini/v5.7.2)
+* [Ultraleap Gemini 5.7.2](https://developer.leapmotion.com/tracking-software-download)
 
 ## Usage / Installation / Building
 

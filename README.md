@@ -1,6 +1,6 @@
 # Leap Motion Controller finger tracking for VRChat OSC
 
-Using a Leap Motion Controller from Ultraleap for finger tracking in VRChat without mods. Version 1.0.3 of this project is now a standalone Unity application, as Ultraleap has discontinued its Javascript SDK.
+Using a Leap Motion Controller from Ultraleap for finger tracking in VRChat. Version 1.0.3 of this project is now a standalone Unity application, as Ultraleap has discontinued its Javascript SDK.
 
 ![preview](https://user-images.githubusercontent.com/53810001/191473987-7695cc22-2935-4fa7-9028-788854c0054a.png)
 

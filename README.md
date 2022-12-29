@@ -1,3 +1,5 @@
+**Disclaimer**: *This project does not support spreading fingers or tracking hand position, it's limited to opening and closing each finger into a fist/open hand.* It was made as a proof of concept and a first OSC project. For the hand position you need additional controlers or trackers. If you are on PCVR, I recommend using a custom [SteamVR driver](https://github.com/SDraw/driver_leap) instead, as it enables both finger and hand tracking compatible with full body tracking.
+
 # Leap Motion Controller finger tracking for VRChat OSC
 
 Using a Leap Motion Controller from Ultraleap for finger tracking in VRChat. Version 1.0.3 of this project is now a standalone Unity application, as Ultraleap has discontinued its Javascript SDK.

@@ -70,9 +70,9 @@ Your avatar receives OSC inputs for 20 float parameters that you need to add to 
 
 To do this, we created two layers in the gesture layer (one hand each) and added a custom bool parameter called "leapmotion" to turn OSC value playback on and off ingame. We recommend using a threshold of `0.4` to `0.9` for the blendtrees, as we have had the best results with this. Please note that the animations provided in the repo are customized to our avatars and have not been tested on other avatars yet. In the worst case you will have to set up the animations and blendtrees yourself.
 
-![image](https://user-images.githubusercontent.com/53810001/154858570-233b9e0b-21b5-4880-9ed7-c6087a911ef9.png)
+![image](https://user-images.githubusercontent.com/70418069/212783655-abdb916c-e793-4b69-8a06-e28b81811ea3.png)
 
-![image](https://user-images.githubusercontent.com/53810001/154858549-dd4e3ef0-7a4f-490e-90b6-2b680d86793d.png)
+![image](https://user-images.githubusercontent.com/70418069/212783698-89c0ac85-b7f0-41c3-b06a-873a50544781.png)
 
 ## Contributors
 - [Zedzeen](https://github.com/Zedzeen) original NodeJS version.

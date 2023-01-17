@@ -2,9 +2,9 @@
 
 # Leap Motion Controller finger tracking for VRChat OSC
 
-Using a Leap Motion Controller from Ultraleap for finger tracking in VRChat. Version 1.0.4 of this project is now a standalone Unity application with finger spreading, as Ultraleap has discontinued its Javascript SDK.
+Using a Leap Motion Controller from Ultraleap for finger tracking in VRChat.
 
-![preview](https://user-images.githubusercontent.com/53810001/191473987-7695cc22-2935-4fa7-9028-788854c0054a.png)
+![preview](https://user-images.githubusercontent.com/70418069/212970688-0c3d9517-9f3f-446d-8107-68ddc13402b5.png)
 
 ## Description
 
@@ -20,12 +20,11 @@ This project uses [OscCore](https://github.com/stella3d/OscCore) and the OpenUPM
 
 ### Windows
 
-Download and run the [pre-packaged executable](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.0.4/LeapmotionOSC-1.0.4.exe) file of the latest release.
-If you want, you can also download the [archive file](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.0.4/leapmotionosc-1.0.4-windows.zip) marked as the windows build, unzip it and run the executable file it contains.
+Download and run the [installer](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.1.0/leapmotionosc-1.1.0-windows-Installer.exe) file of the latest release. If you want, you can also download the [archive file](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.1.0/leapmotionosc-1.1.0-windows.zip) marked as the windows build, unzip it and run the executable file it contains.
 
 ### Linux
 
-Download the [archive file](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.0.4/leapmotionosc-1.0.4-linux.zip) marked as the linux build, extract it and run the application with:
+Download the [archive file](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.1.0/leapmotionosc-1.1.0-linux.zip) marked as the linux build, extract it and run the application with:
 
 ```console
 ./LeapmotionOSC.x86_64
@@ -45,7 +44,7 @@ The tracking optimization for the controllers is set to `HMD`, using Edit Time P
 
 ## Avatar Setup
 
-Your avatar receives OSC inputs for 20 float parameters that you need to add to your avatar. You also need to create or use the [animation controller provided in the 1.0.4 release](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.0.4/leapmotionosc-avatar-animation-controller.unitypackage) to create blendtrees that transition from the retracted to the extended state of each finger.
+Your avatar receives OSC inputs for 20 float parameters that you need to add to your avatar. You also need to create or use the [animation controller provided in the 1.1.0 release](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.1.0/leapmotionosc-avatar-animation-controller.unitypackage) to create blendtrees that transition from the animations of each finger.
 
 * leftThumb (float)
 * leftIndex (float)
@@ -68,7 +67,7 @@ Your avatar receives OSC inputs for 20 float parameters that you need to add to 
 * rightRingSpread (float)
 * rightPinkySpread (float)
 
-To do this, we created two layers in the gesture layer (one hand each) and added a custom bool parameter called "leapmotion" to turn OSC value playback on and off ingame. We recommend using a threshold of `0.4` to `0.9` for the blendtrees, as we have had the best results with this. Please note that the animations provided in the repo are customized to our avatars and have not been tested on other avatars yet. In the worst case you will have to set up the animations and blendtrees yourself.
+To do this, we created two layers in the gesture layer (one hand each) and added a custom bool parameter called "leapmotion" to turn OSC value playback on and off ingame. We recommend using a threshold of `0.4` to `1.0` for the blendtrees, as we have had the best results with this. Please note that the animations provided in the repo are customized to our avatars and have not been tested on other avatars yet. In the worst case you will have to set up the animations and blendtrees yourself. You will probably need to adjust the thresholds to fit your avatars hands correctly.
 
 ![image](https://user-images.githubusercontent.com/70418069/212783655-abdb916c-e793-4b69-8a06-e28b81811ea3.png)
 
@@ -80,8 +79,8 @@ To do this, we created two layers in the gesture layer (one hand each) and added
 
 ## Version History
 
-* 1.0.4
-    * Added finger spreading.
+* 1.1.0
+    * Added finger spreading thanks to [-Thimo-](https://github.com/ThatGuyThimo).
 * 1.0.3
     * Moved to standalone Unity application.
 * 1.0.2
@@ -90,7 +89,7 @@ To do this, we created two layers in the gesture layer (one hand each) and added
     * Split distance calculation and OSC sending to separate functions.
 * 1.0.0
     * Pull changes from Zedzeen, cleanup code, update license.
-* 0.1
+* 0.0.1
     * Initial Release.
 
 ## License

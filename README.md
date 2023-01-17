@@ -20,7 +20,7 @@ This project uses [OscCore](https://github.com/stella3d/OscCore) and the OpenUPM
 
 ### Windows
 
-Download and run the [installer](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.1.0/leapmotionosc-1.1.0-windows-Installer.exe) file of the latest release. If you want, you can also download the [archive file](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.1.0/leapmotionosc-1.1.0-windows.zip) marked as the windows build, unzip it and run the executable file it contains.
+Download and run the [installer](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.1.0/leapmotionosc-1.1.0-windows-installer.exe) file of the latest release. If you want, you can also download the [archive file](https://github.com/adeleine1412/leapmotion-osc/releases/download/release-1.1.0/leapmotionosc-1.1.0-windows.zip) marked as the windows build, unzip it and run the executable file it contains.
 
 ### Linux
 

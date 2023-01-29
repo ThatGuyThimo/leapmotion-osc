@@ -6,7 +6,7 @@ Using a Leap Motion Controller from Ultraleap for finger tracking in VRChat.
 
 https://user-images.githubusercontent.com/53810001/215330447-46fb1333-aa8c-42c6-94cc-1225e8e5e78c.mp4
 
-Example of [minordaimyo](https://twitter.com/minordaimyo) using leapmotion-osc 1.1.0 in combination with [Driver Leap](https://github.com/SDraw/driver_leap) to determine the position of the hand.
+Example of [minordaimyo](https://twitter.com/minordaimyo) using leapmotion-osc 1.1.0 in combination with [Driver Leap](https://github.com/SDraw/driver_leap) for both hand and finger tracking.
 
 ![parameter-input-example](https://user-images.githubusercontent.com/70418069/212970688-0c3d9517-9f3f-446d-8107-68ddc13402b5.png)
 

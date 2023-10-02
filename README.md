@@ -80,8 +80,9 @@ To do this, we created two layers in the gesture layer (one hand each) and added
 ![image](https://user-images.githubusercontent.com/70418069/212783698-89c0ac85-b7f0-41c3-b06a-873a50544781.png)
 
 ## Contributors
-- [Zedzeen](https://github.com/Zedzeen) original NodeJS version.
-- [-Thimo-](https://github.com/ThatGuyThimo) referral / help for new Unity standalone version and finger spreading implementation.
+- [Philipp](https://github.com/philfiru) initial project release.
+- [Ollie](https://github.com/olofthesnowman) original NodeJS version.
+- [-Thimo-](https://github.com/ThatGuyThimo) move to Unity standalone version, implementation of finger spreading. Repository owner.
 
 ## Version History
 

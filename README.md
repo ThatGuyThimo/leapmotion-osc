@@ -85,6 +85,8 @@ To do this, we created two layers in the gesture layer (one hand each) and added
 
 ## Version History
 
+* 2nd October 2023
+    * Repository ownership transfer from [Philipp](https://github.com/philfiru) to [-Thimo-](https://github.com/ThatGuyThimo).
 * 1.1.0
     * Added finger spreading thanks to [-Thimo-](https://github.com/ThatGuyThimo).
 * 1.0.3
@@ -94,9 +96,9 @@ To do this, we created two layers in the gesture layer (one hand each) and added
 * 1.0.1
     * Split distance calculation and OSC sending to separate functions.
 * 1.0.0
-    * Pull changes from Zedzeen, cleanup code, update license.
+    * Pull changes from [Ollie](https://github.com/olofthesnowman), cleanup code, update license.
 * 0.0.1
-    * Initial Release.
+    * Initial Release by [Philipp](https://github.com/philfiru) & [Ollie](https://github.com/olofthesnowman).
 
 ## License
 
